@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-powered solutions for emails, workouts, and meal plans">
+    <title>AI Task Solver - Smart Solutions for Professionals</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>AI Task Solver</h1>
+        <nav class="task-selector">
+            <button class="task-btn active" data-task="email">Email Templates</button>
+            <button class="task-btn" data-task="workout">Workout Plans</button>
+            <button class="task-btn" data-task="meal">Meal Suggestions</button>
+        </nav>
+    </header>
+
+    <!-- Ad Unit -->
+    <div class="ad-banner" id="header-ad">
+        <!-- Google AdSense code will be injected here -->
+    </div>
+
+    <main class="container">
+        <section class="input-section">
+            <div class="dynamic-form"></div>
+            <button class="generate-btn">Generate</button>
+        </section>
+
+        <section class="output-section">
+            <div class="loading-spinner"></div>
+            <div class="result-container"></div>
+        </section>
+    </main>
+
+    <!-- Ad Unit -->
+    <div class="ad-banner" id="footer-ad">
+        <!-- Google AdSense code will be injected here -->
+    </div>
+
+    <script src="app.js"></script>
+    <!-- AdSense Script -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+</body>
+</html>
+const API_ENDPOINT = 'https://your-backend.com/generate';
+
+const taskConfigs = {
+    email: {
+        inputs: ['industry', 'tone', 'keyPoints'],
+        prompt: (inputs) => `Generate professional email for ${inputs.industry} with ${inputs.tone} tone about ${inputs.keyPoints}`
+    },
+    workout: {
+        inputs: ['age', 'fitnessLevel', 'goals'],
+        prompt: (inputs) => `Create ${inputs.fitnessLevel} workout plan for ${inputs.age} year old aiming to ${inputs.goals}`
+    },
+    meal: {
+        inputs: ['dietType', 'allergies', 'calories'],
+        prompt: (inputs) => `Suggest ${inputs.dietType} meal plan with ${inputs.calories} calories excluding ${inputs.allergies}`
+    }
+};
+
+async function generateContent(task, inputs) {
+    const response = await fetch(API_ENDPOINT, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${API_KEY}`
+        },
+        body: JSON.stringify({
+            task,
+            prompt: taskConfigs[task].prompt(inputs)
+        })
+    });
+    return await response.json();
+}
+const express = require('express');
+const { Configuration, OpenAIApi } = require('openai');
+
+const app = express();
+app.use(express.json());
+
+const configuration = new Configuration({
+    apiKey: process.env.OPENAI_API_KEY,
+});
+const openai = new OpenAIApi(configuration);
+
+app.post('/generate', async (req, res) => {
+    try {
+        const completion = await openai.createCompletion({
+            model: "text-davinci-003",
+            prompt: req.body.prompt,
+            max_tokens: 1000,
+            temperature: 0.7,
+        });
+        
+        res.json({ result: completion.data.choices[0].text });
+    } catch (error) {
+        res.status(500).json({ error: "AI generation failed" });
+    }
+});
+
+app.listen(process.env.PORT || 3000);
+// In separate ads.js file
+function injectAds() {
+    const adUnits = [
+        { id: 'header-ad', unitId: 'AD_UNIT_ID_1' },
+        { id: 'footer-ad', unitId: 'AD_UNIT_ID_2' }
+    ];
+
+    adUnits.forEach(ad => {
+        const slot = document.getElementById(ad.id);
+        slot.innerHTML = `
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                data-ad-slot="${ad.unitId}"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+        `;
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    });
+}
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    
+    .task-selector {
+        flex-direction: column;
+    }
+    
+    .ad-banner {
+        height: 100px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
