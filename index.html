@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-powered solutions for emails, workouts, and meal plans">
+    <title>AI Task Solver - Smart Solutions for Professionals</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>AI Task Solver</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>AI-Powered Solutions for Your Daily Tasks</h2>
+                <p>Generate professional emails, personalized workout plans, and meal suggestions in seconds.</p>
+                <a href="#features" class="cta-btn">Get Started</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/500" alt="AI Illustration">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>What We Offer</h2>
+            <div class="feature-cards">
+                <div class="card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Templates</h3>
+                    <p>Create professional emails tailored to your needs.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>Workout Plans</h3>
+                    <p>Get personalized workout routines based on your goals.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Meal Suggestions</h3>
+                    <p>Receive meal plans that fit your diet and preferences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <span>1</span>
+                    <h3>Choose a Task</h3>
+                    <p>Select the type of task you need help with.</p>
+                </div>
+                <div class="step">
+                    <span>2</span>
+                    <h3>Provide Input</h3>
+                    <p>Enter the required details for your task.</p>
+                </div>
+                <div class="step">
+                    <span>3</span>
+                    <h3>Get Results</h3>
+                    <p>Receive AI-generated solutions instantly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Simplify Your Tasks?</h2>
+            <p>Join thousands of users who are saving time with AI Task Solver.</p>
+            <a href="#features" class="cta-btn">Start Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <p>&copy; 2023 AI Task Solver. All rights reserved.</p>
+            <ul>
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Header */
+.header {
+    background-color: #6200ea;
+    color: white;
+    padding: 20px 0;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 0;
+    background-color: #f4f4f9;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.cta-btn {
+    background-color: #03dac6;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Features Section */
+.features {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+.feature-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.card {
+    background-color: #f4f4f9;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1;
+}
+
+.card i {
+    font-size: 40px;
+    color: #6200ea;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 80px 0;
+    background-color: #f4f4f9;
+}
+
+.how-it-works h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.step {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1;
+}
+
+.step span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #6200ea;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.step h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.step p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Call to Action Section */
+.cta {
+    padding: 80px 0;
+    background-color: #6200ea;
+    color: white;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.cta .cta-btn {
+    background-color: #03dac6;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer ul li a {
+    color: white;
+    font-size: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .feature-cards, .steps {
+        flex-direction: column;
+    }
+
+    .card, .step {
+        margin-bottom: 20px;
+    }
+}
+
